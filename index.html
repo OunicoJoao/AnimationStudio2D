@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+<title>AnimationStudio</title>
+<meta name="description" content="Desenhe e anime quadro a quadro com traço suave: camadas, onion skin, áudio e exportação para vídeo, GIF e PNG. Funciona offline.">
+<meta name="theme-color" content="#f3f3f1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AnimationStudio">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/gallery.css">
+<link rel="stylesheet" href="styles/editor.css">
+<link rel="stylesheet" href="styles/panels.css">
+<link rel="stylesheet" href="styles/dialogs.css">
+<script>
+  // aplica o tema antes de pintar, sem piscar
+  try {
+    const s = JSON.parse(localStorage.getItem('animationstudio2d.settings.v1') || '{}');
+    const t = s.theme || 'system';
+    const dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  } catch (e) { /* sem armazenamento */ }
+</script>
+<script type="module" src="src/main.js"></script>
+</head>
+<body>
+<div id="app" data-screen="gallery">
+  <section id="gallery" aria-label="Meus projetos"></section>
+
+  <section id="editor" hidden aria-label="Editor">
+    <header id="topbar" class="topbar"></header>
+    <div id="toolOptions" class="toolopts" role="toolbar" aria-label="Opções da ferramenta"></div>
+    <div class="workarea">
+      <aside id="toolRail" class="toolrail"></aside>
+      <section id="stage" class="stage">
+        <canvas id="stageCanvas" aria-label="Área de desenho" tabindex="-1"></canvas>
+      </section>
+      <aside id="sidePanel" class="sidepanel" aria-label="Cores e camadas">
+        <section id="colorPanel" class="panel"></section>
+        <section id="layersPanel" class="panel panel-layers"></section>
+      </aside>
+    </div>
+    <section id="timeline" class="timeline" aria-label="Linha do tempo"></section>
+    <footer id="statusBar" class="statusbar"></footer>
+  </section>
+</div>
+<div id="dialogs"></div>
+<div id="toasts" aria-live="polite"></div>
+<noscript><p style="padding:24px;font:16px system-ui">O AnimationStudio precisa de JavaScript ativado.</p></noscript>
+</body>
+</html>

@@ -17,8 +17,8 @@ export const DEFAULT_SETTINGS = {
   brush: { preset: 'pen', size: 8, opacity: 100, stabilize: 35, pressure: true },
   eraser: { preset: 'hard', size: 28, opacity: 100, stabilize: 10, pressure: true },
   fill: { tolerance: 30, sample: 'all', expand: 2, contiguous: true },
-  lassoFill: { opacity: 100 },
-  shape: { kind: 'rect', mode: 'stroke', size: 6 },
+  lassoFill: { mode: 'fill', opacity: 100 },
+  shape: { kind: 'rect', mode: 'stroke', size: 6, opacity: 100 },
   gradient: { kind: 'linear', end: 'transparent' },
   select: { kind: 'rect' },
   wand: { tolerance: 24, contiguous: true, sample: 'layer' },
@@ -27,6 +27,7 @@ export const DEFAULT_SETTINGS = {
   grid: { on: false, size: 64 },
   symmetry: { mode: 'none', count: 6 },
   preview: false,
+  colorPicker: true,
   sidePanel: true,
   timeline: true,
 };

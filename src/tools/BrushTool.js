@@ -129,7 +129,7 @@ export class BrushTool extends Tool {
       { type: 'slider', key: `${grp}.size`, label: 'Tamanho', min: 1, max: 500, step: 1, unit: 'px', log: true },
       { type: 'slider', key: `${grp}.opacity`, label: 'Opacidade', min: 1, max: 100, step: 1, unit: '%' },
       { type: 'slider', key: `${grp}.stabilize`, label: 'Suavizar', min: 0, max: 100, step: 1, unit: '%' },
-      { type: 'toggle', key: `${grp}.pressure`, label: 'Pressão da caneta', icon: 'pressure' },
+      { type: 'toggle', key: `${grp}.pressure`, label: 'Pressão', icon: 'pressure' },
       SYMMETRY_OPTION,
     ];
   }

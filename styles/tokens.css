@@ -1,0 +1,95 @@
+/* Tokens de design.
+   Linguagem: adesivos desenhados à mão — superfícies claras, contorno de tinta de 1,5 px,
+   cantos arredondados, sombra dura deslocada e acentos pastel (manteiga, sálvia, lilás,
+   coral, céu). No escuro, o contorno vira grafite e a tinta clareia; os pastéis ganham
+   mais luminosidade para manter contraste AA. */
+
+:root {
+  --f-display: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --f-ui: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --stroke: 1.5px;
+
+  --t-xs: 11px;
+  --t-sm: 12.5px;
+  --t-md: 14px;
+  --t-lg: 17px;
+  --t-xl: 22px;
+  --t-2xl: 34px;
+
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --tap: 36px;
+}
+
+:root,
+[data-theme="light"] {
+  --bg: #f3f3f1;
+  --surface: #ffffff;
+  --surface-2: #f6f6f3;
+  --surface-3: #ececE8;
+  --ink: #1d1d1f;
+  --ink-2: #57575f;
+  --ink-3: #8a8a92;
+  --line: #1d1d1f;
+  --line-soft: #dcdcd6;
+  --butter: #f6cf6e;
+  --butter-soft: #fcefc9;
+  --sage: #6fae86;
+  --sage-soft: #dff0e4;
+  --lilac: #c9bdf7;
+  --lilac-soft: #eeeafd;
+  --coral: #f08c8c;
+  --coral-ink: #b3261e;
+  --sky: #6ec6f0;
+  --on-accent: #1d1d1f;
+  --shadow: 3px 3px 0 var(--ink);
+  --shadow-sm: 2px 2px 0 var(--ink);
+  --shadow-lg: 5px 5px 0 var(--ink);
+  --overlay: rgba(29, 29, 31, .35);
+  --stage: #e7e7e2;
+  --stage-dot: rgba(29, 29, 31, .09);
+  --paper-shadow: rgba(29, 29, 31, .92);
+  --grid: rgba(29, 29, 31, .14);
+  --focus: #2f6fdb;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #18191d;
+  --surface: #222429;
+  --surface-2: #2a2c32;
+  --surface-3: #33363d;
+  --ink: #eeede8;
+  --ink-2: #b4b4bb;
+  --ink-3: #85858e;
+  --line: #5d616c;
+  --line-soft: #3a3d45;
+  --butter: #f4c95e;
+  --butter-soft: #3d3522;
+  --sage: #7fc49a;
+  --sage-soft: #233229;
+  --lilac: #b9abf5;
+  --lilac-soft: #2d2a42;
+  --coral: #f39a9a;
+  --coral-ink: #ffb4ab;
+  --sky: #7fd0f6;
+  --on-accent: #1d1d1f;
+  --shadow: 3px 3px 0 #0b0b0d;
+  --shadow-sm: 2px 2px 0 #0b0b0d;
+  --shadow-lg: 5px 5px 0 #0b0b0d;
+  --overlay: rgba(0, 0, 0, .55);
+  --stage: #111215;
+  --stage-dot: rgba(255, 255, 255, .05);
+  --paper-shadow: rgba(0, 0, 0, .75);
+  --grid: rgba(120, 140, 255, .22);
+  --focus: #8ab4ff;
+  color-scheme: dark;
+}
+
+@media (pointer: coarse) {
+  :root { --tap: 44px; }
+}
